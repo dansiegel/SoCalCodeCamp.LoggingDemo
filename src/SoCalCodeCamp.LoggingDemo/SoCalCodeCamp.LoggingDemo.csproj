@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>This is the Logging Demo Module as shown at the SoCal Code Camp 2018. This demonstrates Prism Modularity, Prism.Plugin.Popups, and the Syslog logger from Prism.Plugin.Logging.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialFormControls" Version="2018.2.22-pre1" />
+    <PackageReference Include="Prism.Forms" Version="7.1.0.431" />
+    <PackageReference Include="Prism.Plugin.Logging.Syslog" Version="1.1.1.230" />
+    <PackageReference Include="Prism.Plugin.Popups" Version="2.1.0.228" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ReadMe.txt" />
+    <Content Include="ReadMe.txt" Pack="true" />
+    <Compile Update="i18n\AppResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="i18n\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

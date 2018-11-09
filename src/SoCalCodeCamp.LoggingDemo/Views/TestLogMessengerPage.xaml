@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:i18n="clr-namespace:SoCalCodeCamp.LoggingDemo.i18n"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                 x:Class="SoCalCodeCamp.LoggingDemo.Views.TestLogMessengerPage">
+  <popup:PopupPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="Padding" Value="40" />
+      </Style>
+      <Style TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="DarkGray" />
+        <Setter Property="BorderColor" Value="Black" />
+        <Setter Property="BorderRadius" Value="15" />
+        <Setter Property="BorderWidth" Value="1" />
+      </Style>
+      <Style TargetType="BoxView" x:Key="divider">
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="HeightRequest" Value="1" />
+        <Setter Property="Margin" Value="15,25" />
+      </Style>
+    </ResourceDictionary>
+  </popup:PopupPage.Resources>
+  <StackLayout>
+    <Button Text="{x:Static i18n:AppResources.ReportFakeException}"
+            Command="{Binding ReportSampleExceptionCommand}"/>
+
+    <BoxView Style="{StaticResource divider}" />
+
+    <Editor Text="{Binding LogMessage}"
+            HeightRequest="40"/>
+    <Button Text="{x:Static i18n:AppResources.Send}"
+            Command="{Binding SendLogCommand}"/>
+  </StackLayout>
+</popup:PopupPage>
