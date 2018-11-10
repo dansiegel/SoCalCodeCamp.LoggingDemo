@@ -20,9 +20,8 @@ steps:
   displayName: 'NuGet restore'
 
 - task: MSBuild@1
-  displayName: Build Demo Auth Module
+  displayName: Build Solution
   inputs:
-    solution: SoCalCodeCamp.AuthDemo.sln
     platform: '$(BuildPlatform)'
     configuration: '$(BuildConfiguration)'
 
